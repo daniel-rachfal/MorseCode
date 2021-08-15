@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<html>
-<body>
-    <h1>Hello</h1>
-</body>
-</html>
+@extends('layouts.app')
+
+@section('content')
+TEST
+@endsection
