@@ -104,7 +104,7 @@ class MorseCodeSeeder extends Seeder
             [
                 'plainText' => "M",
                 'fileLocation' => "MorseSounds/M.ogg",
-                'morseText' => ".."
+                'morseText' => "--"
             ],
 
 
