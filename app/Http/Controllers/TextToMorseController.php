@@ -4,16 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\MorseCode;
+use App\Models\MorseWord;
 
 class TextToMorseController extends Controller
 {
-    public function test()
+    public function test($difficulty)
     {
-        $morseCode = MorseCode::inRandomOrder()->first();
-        return view('textToMorse', ['morseCode' => $morseCode]);
+        $morseCode = $this->fetchMorse($difficulty);
+        return view('textToMorse', ['morseCode' => $morseCode, 'difficulty' => $difficulty]);
     }
 
-    public function processInput(Request $request)
+    public function processInput(Request $request, $difficulty)
     {
         $correct = $request->correct;
         $answer = $request->answer;
@@ -25,7 +26,26 @@ class TextToMorseController extends Controller
             $result = 'Incorrect, the correct answer was ' . $correct;
         }
 
-        $morseCode = MorseCode::inRandomOrder()->first();
-        return view('textToMorse', ['morseCode' => $morseCode, 'result' => $result]);
+        $morseCode = $this->fetchMorse($difficulty);
+
+        return view('textToMorse', ['morseCode' => $morseCode, 'result' => $result, 'difficulty' => $difficulty]);
+    }
+
+    private function fetchMorse($difficulty)
+    {
+        if ($difficulty == "easy")
+        {
+            $morseCode = MorseCode::inRandomOrder()->first();
+        }
+        elseif ($difficulty == "hard")
+        {
+            $morseCode = MorseWord::inRandomOrder()->first();
+        }
+        // Invalid Difficulty, redirecting
+        else
+        {
+            return redirect('/');
+        }
+        return $morseCode;
     }
 }

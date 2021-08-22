@@ -8,6 +8,9 @@
     }
 </style>
 
+<a href="{{url('/textToMorse/easy')}}">Easy</a>
+<a href="{{url('/textToMorse/hard')}}">Hard</a>
+
 <h2>{{$result ?? ''}}</h2>
 <h2>{{$morseCode->plainText}}<h2>
 
@@ -15,7 +18,7 @@
 <button id="in_-" onclick="appendDash()"> - </button>
 <button id="in_space" onclick="appendSpace()"> &nbsp </button>
 
-<form action="{{url('/textToMorse')}}" method="POST">
+<form action="{{url('/textToMorse/'.$difficulty)}}" method="POST">
     {{ csrf_field() }}
     <input type="hidden" name="correct" value="{{$morseCode->morseText}}">
     <input type="text" name="answer" id="input"/>

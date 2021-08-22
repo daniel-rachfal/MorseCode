@@ -18,8 +18,8 @@ Route::get('/', function () {
 });
 
 Route::get('/morseCodes', 'App\Http\Controllers\MorseController@index');
-Route::get('/morseToText', 'App\Http\Controllers\MorseToTextController@showNew');
-Route::post('/morseToText', 'App\Http\Controllers\MorseToTextController@processInput');
+Route::get('/morseToText/{difficulty}', 'App\Http\Controllers\MorseToTextController@showNew');
+Route::post('/morseToText/{difficulty}', 'App\Http\Controllers\MorseToTextController@processInput');
 
-Route::get('/textToMorse', 'App\Http\Controllers\TextToMorseController@test');
-Route::post('/textToMorse', 'App\Http\Controllers\TextToMorseController@processInput');
+Route::get('/textToMorse/{difficulty}', 'App\Http\Controllers\TextToMorseController@test');
+Route::post('/textToMorse/{difficulty}', 'App\Http\Controllers\TextToMorseController@processInput');

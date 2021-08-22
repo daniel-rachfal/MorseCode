@@ -16,10 +16,10 @@
                     <a class="nav-link" href="/morseCodes">Morse Codes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/morseToText">Morse To Text</a>
+                    <a class="nav-link" href="/morseToText/easy">Morse To Text</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/textToMorse">Text To Morse</a>
+                    <a class="nav-link" href="/textToMorse/easy">Text To Morse</a>
                 </li>
             </ul>
         </div>
