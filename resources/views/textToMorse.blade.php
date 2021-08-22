@@ -11,8 +11,22 @@
 <a href="{{url('/textToMorse/easy')}}">Easy</a>
 <a href="{{url('/textToMorse/hard')}}">Hard</a>
 
-<h2>{{$result ?? ''}}</h2>
-<h2>{{$morseCode->plainText}}<h2>
+@isset($correct)
+<p>String given was: {{$correct->plainText ?? ''}}</p>
+<p>{{$result ?? ''}}</p>
+<p>{{$correct->morseText ?? ''}}</p>
+<p>Your answer was {{$answer ?? ''}}</p>
+@endisset
+
+@isset($mostCommonMistakes)
+<p>Your most common mistakes were:</p>
+@foreach ($mostCommonMistakes as $mistake)
+<p>{{$mistake[0]}} => {{$mistake[1]}}</p>
+@endforeach
+@endisset
+
+<br>
+<h2>{{$morseCode->plainText}}</h2>
 
 <button id="in_." onclick="appendDit()"> . </button>
 <button id="in_-" onclick="appendDash()"> - </button>
@@ -20,7 +34,7 @@
 
 <form action="{{url('/textToMorse/'.$difficulty)}}" method="POST">
     {{ csrf_field() }}
-    <input type="hidden" name="correct" value="{{$morseCode->morseText}}">
+    <input type="hidden" name="correct" value="{{$morseCode}}">
     <input type="text" name="answer" id="input"/>
     <input type="submit" value="Submit" >
 </form>

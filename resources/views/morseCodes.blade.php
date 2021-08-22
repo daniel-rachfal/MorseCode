@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Morse Codes')
 @section('content')
 <table>
     <tr>
