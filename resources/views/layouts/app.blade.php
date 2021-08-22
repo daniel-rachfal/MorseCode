@@ -13,6 +13,9 @@
                     <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="/morseCodes">Morse Codes</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/morseToText">Morse To Text</a>
                 </li>
                 <li class="nav-item">
