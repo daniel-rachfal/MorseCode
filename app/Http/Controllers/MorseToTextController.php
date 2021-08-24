@@ -8,7 +8,7 @@ use App\Models\MorseWord;
 
 class MorseToTextController extends Controller
 {
-    public function showNew($difficulty)
+    public function showView($difficulty)
     {
         $morseCode = $this->fetchMorse($difficulty);
         return view('morseToText', ['morseCode' => $morseCode, 'difficulty' => $difficulty]);
