@@ -8,7 +8,7 @@
 * `cd ~`
 * `apt-get update && apt-get install -y git`
 * Install Composer & Dependencies
-    * `apt install wget curl openssl php-common php-curl php-json php-mbstring php-mysql php-xml php-zip`
+    * `apt install wget curl openssl php php-common php-curl php-json php-mbstring php-mysql php-xml php-zip`
     * `curl -sS https://getcomposer.org/installer |php`
     * `mv composer.phar /usr/bin/composer`
 * `git clone https://github.com/daniel-rachfal/MorseCode/ && cd MorseCode`
