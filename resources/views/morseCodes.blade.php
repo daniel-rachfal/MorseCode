@@ -16,7 +16,7 @@
         <td>
             <audio controls="controls" height="100" width="1000">
             <source src="{{url('storage/'.$morseCode->fileLocation)}}" type="audio/ogg" />
-            <embed height="100" width="100" src="{{url('storage'.$morseCode->fileLocation)}}" />
+            <embed height="100" width="100" src="{{url('storage/'.$morseCode->fileLocation)}}" />
             </audio>
         </td>
     </tr>
