@@ -5,13 +5,21 @@
     * Ensure that WSL2 compatibility is enabled in Docker ![DockerWSL](docs/images/dockerWSL.png)
     * In Command Prompt / Windows Terminal to enter your Linux Subsystem
         * `wsl`
+    * Create a user that's not root if you haven't been prompted by Linux
+        * `adduser username`
+        * `usermod -aG sudo username`
 * `cd ~`
-* `apt-get update && apt-get install -y git`
+* `sudo apt-get update`
 * Install Composer & Dependencies
-    * `apt install wget curl openssl php php-common php-curl php-json php-mbstring php-mysql php-xml php-zip`
+    * `sudo apt install git wget curl openssl php php-common php-curl php-json php-mbstring php-mysql php-xml php-zip`
     * `curl -sS https://getcomposer.org/installer |php`
-    * `mv composer.phar /usr/bin/composer`
+    * `sudo mv composer.phar /usr/bin/composer`
 * `git clone https://github.com/daniel-rachfal/MorseCode/ && cd MorseCode`
 * `composer update`
 * `cp .env.example .env`
 * `./vendor/bin/sail up`
+* `./vendor/bin/sail artisan migrate --seed`
+
+If you're getting permission issues just run `sudo chmod -R 777 storage`. It's not a good solution, but it works.
+
+<sub>I really thought this would be easier</sub>
