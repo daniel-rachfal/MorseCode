@@ -22,4 +22,6 @@
 
 If you're getting permission issues just run `sudo chmod -R 777 storage`. It's not a good solution, but it works.
 
+Project should be available on [http://localhost:80](http://localhost:80)
+
 <sub>I really thought this would be easier</sub>
